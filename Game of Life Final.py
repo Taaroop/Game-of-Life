@@ -25,6 +25,8 @@ def replace(s, pos, b):
 
 print()
 
+string_li = [string]
+
 count = 0
 for i in range(gen):
     
@@ -80,6 +82,14 @@ for i in range(gen):
     string = new_string
     print(string)
     print()
+    
+    if string not in string_li:
+        string_li.append(string)
+    else:
+        print("This pattern continues")
+        print("Your bacteria survived through all the generations")
+        break
+    
     dead = "0" * length
     if string != dead:
         count += 1
@@ -94,6 +104,4 @@ for i in range(gen):
                 alive_count += 1
                 
         print("Number of bacteria alive:", alive_count)
-
-
         
