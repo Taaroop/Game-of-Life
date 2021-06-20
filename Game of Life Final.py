@@ -44,22 +44,36 @@ for i in range(gen):
         if j <= length-1 and j > 0:
             left = string[j-1]
             
+        
+        count_0 = 0
+        count_1 = 0
+        
+        if left == "0":
+            count_0 += 1
+        else:
+            count_1 += 1
+        if right == "0":
+            count_0 += 1
+        else:
+            count_1 += 1
+            
         ### conditions for living
+            
+        if count_0 == 2:
+            new = "0"
+            
+        if count_1 == 1 and element == "0":
+            new = "0"
+               
+        if count_1 == 1 and element == "1":
+            new = "1"
+            
+        if count_1 == 2 and element == "1":
+            new = "0"
+            
+        if count_1 == 2 and element == "0":
+            new = "1"
 
-        if left == "0" and right == "0":
-            new = "0"
-        if left == "0" and right == "1" and element == "1":
-            new = "1"
-        if left == "1" and right == "0" and element == "1":
-            new = "1"
-        if left == "1" and right == "1" and element == "1":
-            new = "0"
-        if left == "1" and right == "1" and element == "0":
-            new = "1"
-        if left == "0" and right == "1" and element == "0":
-            new = "0"
-        if left == "0" and right == "1" and element == "0":
-            new = "0"
             
         new_string += new
         
