@@ -85,7 +85,7 @@ for i in range(gen):
     
     if string not in string_li:
         string_li.append(string)
-    else:
+    elif string != length*"0":
         print("This pattern continues")
         print("Your bacteria survived through all the generations")
         break
